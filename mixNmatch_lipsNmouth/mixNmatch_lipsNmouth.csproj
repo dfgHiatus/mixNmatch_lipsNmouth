@@ -34,11 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>G:\Steam\steamapps\common\NeosVR\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="BaseX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\Steam\steamapps\common\NeosVR\Neos_Data\Managed\BaseX.dll</HintPath>
+      <HintPath>..\packages\Lib.Harmony.2.1.1\lib\net45\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="FrooxEngine, Version=2021.10.26.9, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -46,11 +42,6 @@
     </Reference>
     <Reference Include="NeosModLoader">
       <HintPath>G:\Steam\steamapps\common\NeosVR\Libraries\NeosModLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="websocket-sharp">
-      <HintPath>WCFace\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +51,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetDir)\$(TargetFileName)" "G:\Steam\steamapps\common\NeosVR\nml_mods"</PostBuildEvent>
