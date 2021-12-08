@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NeosWCFaceIntegration</RootNamespace>
-    <AssemblyName>NeosWCFaceIntegration</AssemblyName>
+    <RootNamespace>mixNmatch_lipsNmouth</RootNamespace>
+    <AssemblyName>mixNmatch_lipsNmouth</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
