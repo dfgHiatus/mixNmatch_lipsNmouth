@@ -18,6 +18,7 @@ namespace mixNmatch_lipsNmouth
 		}
 
 		// Fix Issue 3440 (Can't mix and match the Eye Tracker with SRAnipal Lip)
+		// Merge EIA485's fix
 		[HarmonyPatch(typeof(AvatarEyeDataSourceAssigner), "OnEquip")]
 		public class AvatarEyeDataSourceAssignerPatch
 		{
