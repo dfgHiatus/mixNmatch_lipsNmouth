@@ -9,7 +9,7 @@ namespace mixNmatch_lipsNmouth
 		public override string Name => "mixNmatch_lipsNmouth";
 		public override string Author => "dfgHiatus";
 		public override string Version => "1.0.0";
-		public override string Link => "https://github.com/dfgHiatus/https://github.com/dfgHiatus/mixNmatch_lipsNmouth/";
+		public override string Link => "https://github.com/dfgHiatus/mixNmatch_lipsNmouth";
 		public override void OnEngineInit()
 		{
 			// Harmony.DEBUG = true;
