@@ -1,7 +1,7 @@
 # mixNmatch_lipsNmouth
 
 A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/)  
-Fixes Issue 3340, allows for differing makes and models of Eye and Face Trackers to operate together. This also fixes some underlying issues, and will be needed for (my) eye and face tracking mods
+Fixes Issue 3340, allows for differing makes and models of Eye and Face Trackers to operate together.
 
 https://github.com/Neos-Metaverse/NeosPublic/issues/3440
 
