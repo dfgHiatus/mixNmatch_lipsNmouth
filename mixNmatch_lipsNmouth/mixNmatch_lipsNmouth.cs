@@ -18,19 +18,20 @@ namespace mixNmatch_lipsNmouth
 		}
 
 		// Fix Issue 3440 (Can't mix and match the Eye Tracker with SRAnipal Lip)
-		[HarmonyPatch(typeof(AvatarEyeDataSourceAssigner))]
+		[HarmonyPatch(typeof(AvatarEyeDataSourceAssigner), "OnEquip")]
 		public class AvatarEyeDataSourceAssignerPatch
 		{
-			public void Postfix(AvatarEyeDataSourceAssigner _aedsa, AvatarObjectSlot slot)
+			public bool Prefix(AvatarEyeDataSourceAssigner __instance, AvatarObjectSlot slot)
 			{
-				if (_aedsa.TargetReference.Target == null)
-					return;
+				if (__instance.TargetReference.Target == null)
+					return false;
 				AvatarEyeTrackingInfo rawEyeData = null;
 				slot.Slot.ActiveUserRoot.ForeachRegisteredComponent<AvatarEyeTrackingInfo>(val => {
 					if (val.EyeDataSource.Target?.IsEyeTrackingActive ?? false)
 						rawEyeData = val;
 				});
-				_aedsa.TargetReference.Target.Target = rawEyeData?.EyeDataSource.Target;
+				__instance.TargetReference.Target.Target = rawEyeData?.EyeDataSource.Target;
+				return false;
 			}
 		}
 	}
