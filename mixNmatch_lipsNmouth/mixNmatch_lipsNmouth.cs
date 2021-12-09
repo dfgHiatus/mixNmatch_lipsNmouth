@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using NeosModLoader;
+using FrooxEngine;
 using FrooxEngine.CommonAvatar;
 
 namespace mixNmatch_lipsNmouth
@@ -32,6 +33,23 @@ namespace mixNmatch_lipsNmouth
 						rawEyeData = val;
 				});
 				__instance.TargetReference.Target.Target = rawEyeData?.EyeDataSource.Target;
+				return false;
+			}
+		}
+
+		[HarmonyPatch(typeof(AvatarMouthDataSourceAssigner), "OnEquip")]
+		public class AvatarMouthDataSourceAssignerPatch
+		{
+			public bool Prefix(AvatarMouthDataSourceAssigner __instance, AvatarObjectSlot slot)
+			{
+				if (__instance.TargetReference.Target == null)
+					return false;
+				AvatarMouthTrackingInfo rawMouthData = null;
+				slot.Slot.ActiveUserRoot.ForeachRegisteredComponent<AvatarMouthTrackingInfo>(val => {
+					if ((val.MouthDataSource.Target as MouthTrackingStreamManager)?.IsTracking.Target.Value ?? false)
+						rawMouthData = val;
+				});
+				__instance.TargetReference.Target.Target = rawMouthData?.MouthDataSource.Target;
 				return false;
 			}
 		}
