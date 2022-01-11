@@ -9,7 +9,7 @@ namespace mixNmatch_lipsNmouth
 	{
 		public override string Name => "mixNmatch_lipsNmouth";
 		public override string Author => "dfgHiatus";
-		public override string Version => "1.0.1";
+		public override string Version => "1.0.2";
 		public override string Link => "https://github.com/dfgHiatus/mixNmatch_lipsNmouth";
 		public override void OnEngineInit()
 		{
@@ -21,9 +21,9 @@ namespace mixNmatch_lipsNmouth
 		// Fix Issue 3440 (Can't mix and match the Eye Tracker with SRAnipal Lip)
 		// Merge EIA485's fix
 		[HarmonyPatch(typeof(AvatarEyeDataSourceAssigner), "OnEquip")]
-		public class AvatarEyeDataSourceAssignerPatch
+		private static class AvatarEyeDataSourceAssignerPatch
 		{
-			public bool Prefix(AvatarEyeDataSourceAssigner __instance, AvatarObjectSlot slot)
+			private static bool Prefix(AvatarEyeDataSourceAssigner __instance, AvatarObjectSlot slot)
 			{
 				if (__instance.TargetReference.Target == null)
 					return false;
@@ -38,9 +38,9 @@ namespace mixNmatch_lipsNmouth
 		}
 
 		[HarmonyPatch(typeof(AvatarMouthDataSourceAssigner), "OnEquip")]
-		public class AvatarMouthDataSourceAssignerPatch
+		private static class AvatarMouthDataSourceAssignerPatch
 		{
-			public bool Prefix(AvatarMouthDataSourceAssigner __instance, AvatarObjectSlot slot)
+			private static bool Prefix(AvatarMouthDataSourceAssigner __instance, AvatarObjectSlot slot)
 			{
 				if (__instance.TargetReference.Target == null)
 					return false;
