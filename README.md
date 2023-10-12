@@ -1,9 +1,7 @@
 # mixNmatch_lipsNmouth
 
 A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader) mod for [Resonite](https://resonite.com/)  
-Fixes Issue 3340, allows for differing makes and models of Eye and Face Trackers to operate together.
-
-https://github.com/Resonite-Metaverse/ResonitePublic/issues/3440
+Fixes a bug that allows for differing makes and models of Eye and Face Trackers to operate together.
 
 ## Usage
 0. Install [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader).
@@ -11,5 +9,3 @@ https://github.com/Resonite-Metaverse/ResonitePublic/issues/3440
 2. Start the game!
 
 Thanks to those who helped me test this!
-
- 
